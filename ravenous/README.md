@@ -2,7 +2,7 @@ How to Initialize a react project:
 npm install -g create-react-app |||| (only applicable for new computers where this has not yet been installed)
 create-react-app name-of-app  ||||  replace name-of-app with your specification.  Caps not allowed.
 npm start   |||   navigate to newly created directory & check that the project is working
-
+npm install  ||||  This will pull down all the necessary node modules for your current project if you are synchronizing base code through git
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
