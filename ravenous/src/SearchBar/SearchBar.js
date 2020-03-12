@@ -52,7 +52,9 @@ class SearchBar extends React.Component {
     }
 
     handleSearch(event) {
-        this.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+        this.props.onClick(this.state.term, this.state.location, this.state.sortBy);
+        console.log(this.state.term, this.state.location, this.state.sortBy);
+        // this.searchYelp(this.state.term, this.state.location, this.state.sortBy);
         event.preventDefault();
     }
 
@@ -78,17 +80,6 @@ class SearchBar extends React.Component {
     //     });
     //   }
 
-
-
-    searchYelp(term, location, sortBy) {
-        const webAddrPrefix = "https://api.yelp.com/v3/businesses/search?";
-        // const authorization = "";
-        let webAddr = `${webAddrPrefix}term=${term}&location=${location}&sort_by=${sortBy}`;
-        console.log(`Performing search for: ${term} in ${location} sorted by ${sortBy}.`)
-        console.log(webAddr);
-        return webAddr;
-    }
-
     render() {
         return(
             <div className="SearchBar">
@@ -102,7 +93,7 @@ class SearchBar extends React.Component {
                     <input placeholder="Where?" onChange={this.handleLocationChange} />
                 </div>
                 <div className="SearchBar-submit">
-                    <a searchYelp={this.searchYelp} onClick={this.handleSearch}>Let's Go</a>
+                    <a onClick={this.handleSearch}>Let's Go</a>
                 </div>
             </div>
         );

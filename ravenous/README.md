@@ -3,7 +3,7 @@ npm install -g create-react-app |||| (only applicable for new computers where th
 create-react-app name-of-app  ||||  replace name-of-app with your specification.  Caps not allowed.
 npm start   |||   navigate to newly created directory & check that the project is working
 npm install  ||||  This will pull down all the necessary node modules for your current project if you are synchronizing base code through git
-
+npm install whatwg-fetch --save |||| installs whatwg-fetch which is compatible with older browsers where the regular fetch may not work
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
