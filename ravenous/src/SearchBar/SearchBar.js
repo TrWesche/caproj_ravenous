@@ -1,12 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
 
-// const sortByOptions = {
-//     'Best Match': 'best_match',
-//     'Highest Rated': 'rating',
-//     'Most Reviewed': 'review_count'
-// };
-
 class SearchBar extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +12,8 @@ class SearchBar extends React.Component {
         this.sortByOptions = {
             'Best Match': 'best_match',
             'Highest Rated': 'rating',
-            'Most Reviewed': 'review_count'
+            'Most Reviewed': 'review_count',
+            'Distance': 'distance'
         };
         this.handleTermChange = this.handleTermChange.bind(this);
         this.handleLocationChange = this.handleLocationChange.bind(this);
@@ -51,34 +46,34 @@ class SearchBar extends React.Component {
         });
     }
 
+    // let searchArea = document.getElementsByClassName("SearchBar-fields");
+
+    // handleEnterKey(event) {
+    //     return;
+    // }
+
     handleSearch(event) {
         this.props.onClick(this.state.term, this.state.location, this.state.sortBy);
         console.log(this.state.term, this.state.location, this.state.sortBy);
-        // this.searchYelp(this.state.term, this.state.location, this.state.sortBy);
         event.preventDefault();
     }
 
-    renderSortByOptions() {
-        return Object.keys(this.sortByOptions).map((sortByOption,i) =>
-            (
-                <li key={sortByOption + i} className={this.getSortByClass(this.sortByOptions[sortByOption])} onClick={this.handleSortByChange.bind(this, this.sortByOptions[sortByOption])}>
-                    {sortByOption}
-                </li>
-            ));
+    handleSortOptionClick(event) {
+        
     }
-    // Note on above: calling the bind in this manner allows the bind to attach both the function and the appropriate value to each item as it loops through.
 
-    // Below is the Codecademy version of the SortByOptions function
-    // renderSortByOptions() {
-    //     return Object.keys(this.sortByOptions).map(sortByOption => {
-    //       let sortByOptionValue = this.sortByOptions[sortByOption];
-    //       return (<li className={this.getSortByClass(sortByOptionValue)}
-    //                   key={sortByOptionValue}
-    //                   onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>
-    //                 {sortByOption}
-    //              </li>);
-    //     });
-    //   }
+    // Note: calling the bind in this manner allows the bind to attach both the function and the appropriate value to each item as it loops through.
+    renderSortByOptions() {
+        return Object.keys(this.sortByOptions).map(sortByOption => {
+          let sortByOptionValue = this.sortByOptions[sortByOption];
+          return (<li className={this.getSortByClass(sortByOptionValue)}
+                    href="#"
+                    key={sortByOptionValue}
+                    onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>
+                    {sortByOption}
+                 </li>);
+        });
+    }
 
     render() {
         return(
