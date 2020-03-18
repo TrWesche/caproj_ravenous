@@ -1,4 +1,4 @@
-import { apiKey } from './hiddenKey';
+import { apiKey } from './Key';
 
 const yelpVars = {
     webAddr: "https://api.yelp.com/v3/businesses/",
