@@ -1,4 +1,5 @@
-const apiKey = "-tdy_gdsEij9Iw3FI1Mi7_ttTqjNWqpYSenbBdDMpFmk1Z0or8z7YXLcC2BoIrizN00WFpDKbF0iZlWsZy13vhz-ywQzy7lA7Usq9o1usp8sD7fwlg3hDSsT82NoXnYx";
+import { apiKey } from './hiddenKey';
+
 const yelpVars = {
     webAddr: "https://api.yelp.com/v3/businesses/",
     fSearch: "search?"
