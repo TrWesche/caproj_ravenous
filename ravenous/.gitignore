@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Secrect Elements
-/src/App/Util/hiddenKey.js
+/src/Util/hiddenKey.js
